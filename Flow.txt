@@ -1,0 +1,41 @@
+User Flow
+
+                                                      Choose ships coordinates
+                                                                |
+                                                                |
+                                                      Choose difficulty level
+                                                                |
+                                                                |
+                    ------------------------------------Choose cors of shot------------------------------
+                    |                                                                                   |
+                    |                                                                                   |
+                    |                                                                                   |
+                    |                            ----------------------------------                     |
+                    |                           |                                 |                     |
+                    |                           |                                 |                     |
+                    |                                                                                   |
+                    |                                                                                   |
+                    |                                                                                   |
+                                       if (hit == true)                  if (hit == false)              |
+                                                |                                 |                     |
+                                                |                                 |                     |
+                    ^                    yay message,                       boo message-------------------
+                                        shiptypeCtr -= 1
+        if (shiptypeCtr > 0)          if (shiptypeCtr == 0)
+                                                |
+                                                |
+                                        ship sunk message,
+                                        shipCtr -= 1
+                                      if (shipCtr == 0)
+                                                |
+                                                |
+                                            YOU WIN!
+                                        
+                                        
+To switch off turns between User and AI:
+use turnCtr, ++ in a for loop. if turnCtr % 2 == 0, AI's turn.
+
+run with private Easy bob;
+        bob.playTurn()
+        
+Use that in class Battleship        
