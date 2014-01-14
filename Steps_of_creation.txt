@@ -1,0 +1,31 @@
+                                                       Driver
+                                                         |
+                                                         |
+                                                         |
+                                                      Gameplay
+                                                         |
+                                          _______________|________________
+                                          |                              |
+                                          |                              |
+                                          AI                          User Input
+                                          |
+           _______________________________|
+           |            |           |
+           |            |           |    
+          Easy        Medium      Hard
+          
+          
+          /*==================================
+            STEP BY STEP
+         ====================================*/
+         
+         Step 1: Make Driver/ Gameplay w/ setting of map capability
+         Step 2: Make User input
+         Step 3: Erase setting of map
+         Step 4: Create AI Superclass
+         Step 5: Make Easy
+         Step 6: Make Medium
+         Step 7: Make Hard
+         
+         
+         Step 8: Swag done Swag Swag done!
