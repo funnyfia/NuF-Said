@@ -29,6 +29,8 @@ public class Battleship{
     private User Me;
  //if true game is over
     private boolean gameOver;
+ //turncounter determines who's turn it is
+    private int TurnCtr;
     /*determines difficulty of AI...determines which subclass of AI to call
       UNCOMMENT IF DOING DIFFICULTY
     private int difficulty;
@@ -37,6 +39,7 @@ public class Battleship{
  //~~~~~~~~DEFAULT CONSTRUCTOR~~~~~~~~~~~~~~~~~~~~~~
     public Battleship() {
 	gameOver = false;
+	TurnCtr = 0;
 	//newGame();
     
 }//end class Battleship
