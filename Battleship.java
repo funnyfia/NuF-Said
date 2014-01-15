@@ -53,7 +53,13 @@ public class Battleship{
 	    int num = Integer.parseInt(in.readLine());
 	}
 	catch (IOEception e) {}
-	if (num == 0) {
+	
+	if (num == 1) {
+		System.out.println("Setting up ships...");
+		//setRand(String[][] x);
+		//sets up ships randomly uncomment when created
+	}
+	else if (num == 2) {
 	    System.out.println("Awesome! First, we'll place your Carrier. It'll take up  units on the board. Make sure you choose a letter between A and J, and a number between 1 and 10. enter the x and y coordinates with no space in between, like so: 'D7'.");
 	    try {
 		String cor = in.readLine();
