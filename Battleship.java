@@ -73,4 +73,18 @@ public class Battleship{
 	int shots = 0;
     }
     
+   /* public void setRand(String[][] x) {
+    	
+    	int totalShip = 5;
+    	while(totalShip > 0)
+    		for(int i = 0; i < x.length; i++) {
+    			for (int j = 0; j < x[i].length; j++) {
+ 				double bias = Math.random();
+ 				if (bias > 0.5) {
+ 				
+ 			}
+    		}
+    	}
+    } */
+    
 }//end class Battleship
