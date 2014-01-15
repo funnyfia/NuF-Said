@@ -17,6 +17,8 @@ public class Battleship{
     public final static int PATROLBOAT_CTR = 2;
     //constant that determines if you have sunken all ships and one game
     public final static int SHIP_CTR = 5;
+    
+    public final static String CORD_LETTERS = "ABCDEFGHIJ";
  
     /*UNCOMMENT IF DOING DIFFICULTY
       creates AI for varying difficulty
@@ -65,12 +67,22 @@ public class Battleship{
 		String cor = in.readLine();
 	    }
 	    catch (IOEception e) {}
+	    digitify(cor);
 	    //read cor, put in spot, ask if wants to cont ship l,r,u,d.
 	}
     }
 
     public void  playTurn() {
 	int shots = 0;
+    }
+    
+    public int digitify(String x) {
+    	int ans = 0;
+    	for (int i = 0; i < 10; i++) {
+    		if (x.substring(0) == CORD_LETTERS.substring(i)
+    			ans = i;
+    	}
+    	return ans;
     }
     
    /* public void setRand(String[][] x) {
