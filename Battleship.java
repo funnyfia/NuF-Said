@@ -43,8 +43,8 @@ public class Battleship{
 	isr = new InputStreamReader(System.in);
 	in = new BufferedReader(isr);
         gameOver = false;
-	//	String[][] grid = new String[10][10];
-	System.out.println("Let's play!");
+	String[][] grid = new String[10][10];
+	//System.out.println("Let's play!");
 	//newGame();
     }
 
@@ -149,4 +149,25 @@ public class Battleship{
 	 	}
 	}
 	}*/
-}
+    public static void printGrid( String[][] a ) {
+        String s = "Array: \t";
+        for(int i = 0; i < a.length; i++) {
+            s+="[";
+            for (int j = 0; j < a[i].length; j++)
+                s+= a[i][j] + " ";
+
+            if(s.substring(s.length() -1).equals(" "))
+                s = s.substring(0,s.length() - 1);
+            s += "] \n \t";
+        }
+        System.out.println(s);
+    }
+
+    public static void main(String args[]) {
+	Battleship swag = new Battleship();
+	System.out.println(swag);
+	
+	//printGrid(grid);
+    
+    }//end main
+}//end class Battleship
