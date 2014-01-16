@@ -4,6 +4,7 @@
 
 import java.io.*;
 import java.util.*;
+import cs1.Keyboard;
 
 public class Battleship{
  
@@ -55,23 +56,14 @@ public class Battleship{
 	String dir = "";
 	System.out.println("Hello, friendly user! Welcome to Battleship!");
 	System.out.println("Before we start, you need to place your ships on the board. Please enter 1 if you would like this to be done randomly. If you want to place them yourself, please enter 2.");
-	try {
-	    num = Integer.parseInt(in.readLine());
+	if (Keyboard.readInt() == 1) {
+	    setRand();
 	}
-	catch (IOException e) {}
-	
-	if (num == 1) {
-		System.out.println("Setting up ships...");
-		//setRand(String[][] x);
-		//sets up ships randomly uncomment when created
-	}
-	else if (num == 2) {
+	if (Keyboard.readInt() == 2) {
 	    System.out.println("Awesome! First, we'll place your Carrier. It'll take up  units on the board. Make sure you choose a letter between A and J, and a number between 1 and 10 for the coordinates. enter the x and y coordinates with no space in between, like so: 'D7'.");
-	    try {
-		cor = in.readLine();
+	    if (!CORD_LETTERS.contains(Keyboard.readString().substring(0)) || Integer.parseInt(Keyboard.readString().substring(1)) > 10) {
+		System.out.println("Sorry! it's hard to interpret what you've inputted. Please enter a letter between A and J, and a number between 1 and 10.");
 	    }
-	    catch (IOException e) {}
-	    int number = digitify(cor);
 	    grid[number][Integer.parseInt(cor.substring(1))] = "carrier";
 	    System.out.println("Cool! Do you want your ship to continue left, right, up, or down? Enter one.");
 	    try {
