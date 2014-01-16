@@ -43,8 +43,8 @@ public class Battleship{
 	isr = new InputStreamReader(System.in);
 	in = new BufferedReader(isr);
         gameOver = false;
-	String[][] grid = new String[10][10];
-	//System.out.println("Let's play!");
+	//String[][] grid = new String[10][10];
+	System.out.println("Let's play!");
 	//newGame();
     }
 
