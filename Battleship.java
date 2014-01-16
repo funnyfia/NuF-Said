@@ -43,13 +43,13 @@ public class Battleship{
 	isr = new InputStreamReader(System.in);
 	in = new BufferedReader(isr);
         gameOver = false;
-	String[][] grid = new String[10][10];
+	//	String[][] grid = new String[10][10];
 	System.out.println("Let's play!");
 	//newGame();
     }
 
     public void setUp() {
-	
+	String[][] grid = new String[10][10];
 	int num = 0;
 	String cor = "";
 	String dir = "";
@@ -66,13 +66,13 @@ public class Battleship{
 		//sets up ships randomly uncomment when created
 	}
 	else if (num == 2) {
-	    System.out.println("Awesome! First, we'll place your Carrier. It'll take up  units on the board. Make sure you choose a letter between A and J, and a number between 1 and 10 for the coordinates. enter the x and y coordinates with no space in between, like so: 'D7'. Since the carrier is 5 units long, please enter 5 consecutive coordinates, seperated by a space, like this: 'D5,D6,D7,D8,D9'");
+	    System.out.println("Awesome! First, we'll place your Carrier. It'll take up  units on the board. Make sure you choose a letter between A and J, and a number between 1 and 10 for the coordinates. enter the x and y coordinates with no space in between, like so: 'D7'.");
 	    try {
 		cor = in.readLine();
 	    }
 	    catch (IOException e) {}
 	    int number = digitify(cor);
-	    grid[cor.substring(0)][cor.substring(1)] = "carrier";
+	    grid[number][Integer.parseInt(cor.substring(1))] = "carrier";
 	    System.out.println("Cool! Do you want your ship to continue left, right, up, or down? Enter one.");
 	    try {
 	    	dir = in.readLine();
@@ -82,7 +82,7 @@ public class Battleship{
 	    	
 	    }
 	    number = digitify(cor);
-	    grid[cor.substring(0)][cor.substring(1)] = "carrier";
+	    grid[number][Integer.parseInt(cor.substring(1))] = "carrier";
 	    
 	    //put ship parts in spot, ask if wants to cont ship l,r,u,d.
 	}
