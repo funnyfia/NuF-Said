@@ -54,7 +54,7 @@ public class Battleship{
 	try {
 	    int num = Integer.parseInt(in.readLine());
 	}
-	catch (IOEception e) {}
+	catch (IOException e) {}
 	
 	if (num == 1) {
 		System.out.println("Setting up ships...");
@@ -66,14 +66,14 @@ public class Battleship{
 	    try {
 		String cor = in.readLine();
 	    }
-	    catch (IOEception e) {}
+	    catch (IOException e) {}
 	    int num = digitify(cor);
 	    grid[cor.substring(0)][cor.substring(1)] = "carrier";
 	    System.out.println("Cool! Do you want your ship to continue left, right, up, or down? Enter one.");
 	    try {
 	    	String dir = in.readLine();
 	    }
-	    catch (IOEception e) {}
+	    catch (IOException e) {}
 	    if (dir == "left") {
 	    	
 	    }
@@ -91,8 +91,8 @@ public class Battleship{
     public int digitify(String x) {
     	int ans = 0;
     	for (int i = 0; i < 10; i++) {
-    		if (x.substring(0) == CORD_LETTERS.substring(i)
-    			ans = i + 1;
+	    if (x.substring(0) == CORD_LETTERS.substring(i))
+		ans = i + 1;
     	}
     	return ans;
     }
