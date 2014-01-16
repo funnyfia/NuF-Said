@@ -97,18 +97,52 @@ public class Battleship{
     	return ans;
     }
     
-   /* public void setRand(String[][] x) {
-    	
-    	int totalShip = 5;
-    	while(totalShip > 0)
-    		for(int i = 0; i < x.length; i++) {
-    			for (int j = 0; j < x[i].length; j++) {
- 				double bias = Math.random();
- 				if (bias > 0.5) {
- 				
- 			}
-    		}
-    	}
-    } */
-    
-}//end class Battleship
+    public void setRand(String[][] grid) {
+    	int x = 0;
+	int y = 0;
+	int dir = 0;
+	//maybe do String[][] ships to set ships more easily? But how do we do that with length? Do we need an int[][]lens? Maybe...
+	int totalShip = 5;
+	while(totalShip > 0) {
+		dir = (int)(Math.random());//0 is horizontal, 1 is vertical.
+	 	x = (int)(Math.random() * 10);
+	 	y = (int)(Math.random() * 10);
+	 	if (dir == 0) {
+	 		if (x <= 5) {
+	 			grid[x][y] = "carrier";
+	 			grid[x + 1][y] = "carrier";
+	 			grid[x + 2][y] = "carrier";
+	 			grid[x + 3][y] = "carrier";
+	 			grid[x + 4][y] = "carrier";
+	    			totalShip--;
+	 		}
+	 		else {
+	 			grid[x][y] = "carrier";
+	 			grid[x - 1][y] = "carrier";
+	 			grid[x - 2][y] = "carrier";
+	 			grid[x - 3][y] = "carrier";
+	 			grid[x - 4][y] = "carrier";
+	 			totalShip--;
+	 		}
+	 	}
+	 	else {
+	 		if (y <= 5) {
+	 			grid[x][y] = "carrier";
+	 			grid[x][y + 1] = "carrier";
+	 			grid[x][y + 2] = "carrier";
+	 			grid[x][y + 3] = "carrier";
+	 			grid[x][y + 4] = "carrier";
+	    			totalShip--;
+	 		}
+	 		else {
+	 			grid[x][y] = "carrier";
+	 			grid[x][y - 1] = "carrier";
+	 			grid[x][y - 2] = "carrier";
+	 			grid[x][y - 3] = "carrier";
+	 			grid[x][y - 4] = "carrier";
+	 			totalShip--;
+	 		}
+	 	}
+	}
+    }
+}
