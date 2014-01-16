@@ -92,7 +92,7 @@ public class Battleship{
     	int ans = 0;
     	for (int i = 0; i < 10; i++) {
     		if (x.substring(0) == CORD_LETTERS.substring(i)
-    			ans = i;
+    			ans = i + 1;
     	}
     	return ans;
     }
