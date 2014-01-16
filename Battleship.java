@@ -49,10 +49,14 @@ public class Battleship{
     }
 
     public void setUp() {
+	
+	int num = 0;
+	String cor = "";
+	String dir = "";
 	System.out.println("Hello, friendly user! Welcome to Battleship!");
 	System.out.println("Before we start, you need to place your ships on the board. Please enter 1 if you would like this to be done randomly. If you want to place them yourself, please enter 2.");
 	try {
-	    int num = Integer.parseInt(in.readLine());
+	    num = Integer.parseInt(in.readLine());
 	}
 	catch (IOException e) {}
 	
@@ -64,20 +68,20 @@ public class Battleship{
 	else if (num == 2) {
 	    System.out.println("Awesome! First, we'll place your Carrier. It'll take up  units on the board. Make sure you choose a letter between A and J, and a number between 1 and 10 for the coordinates. enter the x and y coordinates with no space in between, like so: 'D7'. Since the carrier is 5 units long, please enter 5 consecutive coordinates, seperated by a space, like this: 'D5,D6,D7,D8,D9'");
 	    try {
-		String cor = in.readLine();
+		cor = in.readLine();
 	    }
 	    catch (IOException e) {}
-	    int num = digitify(cor);
+	    int number = digitify(cor);
 	    grid[cor.substring(0)][cor.substring(1)] = "carrier";
 	    System.out.println("Cool! Do you want your ship to continue left, right, up, or down? Enter one.");
 	    try {
-	    	String dir = in.readLine();
+	    	dir = in.readLine();
 	    }
 	    catch (IOException e) {}
 	    if (dir == "left") {
 	    	
 	    }
-	    int num = digitify(cor);
+	    number = digitify(cor);
 	    grid[cor.substring(0)][cor.substring(1)] = "carrier";
 	    
 	    //put ship parts in spot, ask if wants to cont ship l,r,u,d.
@@ -97,7 +101,7 @@ public class Battleship{
     	return ans;
     }
     
-    public void setRand(String[][] grid) {
+    /* public void setRand(String[][] grid) {
     	int x = 0;
 	int y = 0;
 	int dir = 0;
@@ -144,5 +148,5 @@ public class Battleship{
 	 		}
 	 	}
 	}
-    }
+	}*/
 }
