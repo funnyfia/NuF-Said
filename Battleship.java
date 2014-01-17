@@ -83,44 +83,48 @@ public class Battleship{
 		System.out.println("Do you want the ship to lay horizontally, or vertically? Enter 1 for horizontally, or 2 for vertically.");
 		while (dir != 1 || dir != 2) {
 		    dir = Keyboard.readInt();
+		    
+		    int carrierCount = 5;
 		    if (dir == 1) {
-			if (x < 6) {
-			    grid[x][y] = "carrier";
-			    grid[x + 1][y] = "carrier";
-			    grid[x + 2][y] = "carrier";
-			    grid[x + 3][y] = "carrier";
-			    grid[x + 4][y] = "carrier";
+		       
+			if(x < 6) {
+			    while (carrierCount > 0) {
+				grid[x][y] = "carrier";
+				x++;
+				carrierCount--;
+			    }
 			}
-			else {
+		    }    
+		    else {
+			while(carrierCount > 0) {
 			    grid[x][y] = "carrier";
-			    grid[x - 1][y] = "carrier";
-			    grid[x - 2][y] = "carrier";
-			    grid[x - 3][y] = "carrier";
-			    grid[x - 4][y] = "carrier";
+			    x--;
+			    carrierCount--;
 			}
 		    }
 		    else if (dir == 2) {
 			if (y < 6) {
-			    grid[x][y] = "carrier";
-			    grid[x][y + 1] = "carrier";
-			    grid[x][y + 2] = "carrier";
-			    grid[x][y + 3] = "carrier";
-			    grid[x][y + 4] = "carrier";
+			    while(carrierCount > 0) {
+				grid[x][y] = "carrier";
+				y++;
+				carrierCount--;
+			    }
 			}
 			else {
-			    grid[x][y] = "carrier";
-			    grid[x][y - 1] = "carrier";
-			    grid[x][y - 2] = "carrier";
-			    grid[x][y - 3] = "carrier";
-			    grid[x][y - 4] = "carrier";
+			    while(carrierCount > 0) {
+				grid[x][y] = "carrier";
+				y--;
+				carrierCount--;
+			    }
 			}
 		    }
-		    else {
-			System.out.println("Sorry, but I can only interpret 1 and 2. Please try again.");
-		    }
+		}
+		else {
+		    System.out.println("Sorry, but I can only interpret 1 and 2. Please try again.");
 		}
 	    }
-	}
+	
+    
 	System.out.println("Next, we'll place your battleship. Like before, enter a letter between A and J, and a number between 1 and 10.");
 	while (!CORD_LETTERS.contains(cord.substring(0)) || Integer.parseInt(cord.substring(1)) > 10) {
 	    cord = Keyboard.readString();
