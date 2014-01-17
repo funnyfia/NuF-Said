@@ -188,30 +188,41 @@ public class Battleship{
 		System.out.println("Do you want the ship to lay horizontally, or vertically? Enter 1 for horizontally, or 2 for vertically.");
 		while (dir != 1 || dir != 2) {
 		    dir = Keyboard.readInt();
+		    int submarineCount = 3;
 		    if (dir == 1) {
+		    
 			if (x < 6) {
-			    grid[x][y] = "submarine";
-			    grid[x + 1][y] = "submarine";
-			    grid[x + 2][y] = "submarine";
+				while(submarineCount > 0) {
+					grid[x][y] = "submarine";
+					x++;
+					submarineCount--;
+				}
 			}
 			else {
-			    grid[x][y] = "submarine";
-			    grid[x - 1][y] = "submarine";
-			    grid[x - 2][y] = "submarine";
+			    while(submarineCount > 0) {
+			    	grid[x][y] = "submarine";
+			    	x--;
+			    	submarineCount--;
+			    }
 			}
 		    }
 		    else if (dir == 2) {
 			if (y < 6) {
-			    grid[x][y] = "submarine";
-			    grid[x][y + 1] = "submarine";
-			    grid[x][y + 2] = "submarine";
+				while(submarineCount > 0) {
+					grid[x][y] = "submarine";
+			    		y++;
+			    		submarineCount--;
+				}
 			}
 			else {
-			    grid[x][y] = "submarine";
-			    grid[x][y - 1] = "submarine";
-			    grid[x][y - 2] = "submarine";
+			    while(submarineCount > 0) {
+			    	grid[x][y] = "submarine";
+			 	y--;
+			 	submarineCount--;
+			    }
 			}
 		    }
+		}
 		    else {
 			System.out.println("Sorry, but I can only interpret 1 and 2. Please try again.");
 		    }
@@ -228,30 +239,40 @@ public class Battleship{
 		System.out.println("Do you want the ship to lay horizontally, or vertically? Enter 1 for horizontally, or 2 for vertically.");
 		while (dir != 1 || dir != 2) {
 		    dir = Keyboard.readInt();
+		    int destroyerCount = 3;
 		    if (dir == 1) {
 			if (x < 6) {
-			    grid[x][y] = "destroyer";
-			    grid[x + 1][y] = "destroyer";
-			    grid[x + 2][y] = "destroyer";
+				while(destroyerCount > 0) {
+					grid[x][y] = "destroyer";	
+					x++;
+					destroyerCount--;
+				}
 			}
 			else {
-			    grid[x][y] = "destroyer";
-			    grid[x - 1][y] = "destroyer";
-			    grid[x - 2][y] = "destroyer";
+			 	while(destroyerCount > 0) {
+			    		grid[x][y] = "destroyer";
+			   		x--;
+			   		destroyerCount--;
+			 	}
 			}
 		    }
 		    else if (dir == 2) {
 			if (y < 6) {
-			    grid[x][y] = "destroyer";
-			    grid[x][y + 1] = "destroyer";
-			    grid[x][y + 2] = "destroyer";
+				while(destroyerCount > 0) {
+					grid[x][y] = "destroyer";
+			    		y++;
+			    		destroyerCount--;
+				}
 			}
 			else {
-			    grid[x][y] = "destroyer";
-			    grid[x][y - 1] = "destroyer";
-			    grid[x][y - 2] = "destroyer";
+				while(destroyerCount > 0) {
+			 		grid[x][y] = "destroyer";
+			    		y--;
+			    		destroyerCount--;
+				}
 			}
 		    }
+		}
 		    else {
 			System.out.println("Sorry, but I can only interpret 1 and 2. Please try again.");
 		    }
@@ -268,26 +289,40 @@ public class Battleship{
 		System.out.println("Do you want the ship to lay horizontally, or vertically? Enter 1 for horizontally, or 2 for vertically.");
 		while (dir != 1 || dir != 2) {
 		    dir = Keyboard.readInt();
+		    int patrolboatCount = 2;
 		    if (dir == 1) {
 			if (x < 6) {
-			    grid[x][y] = "patrolboat";
-			    grid[x + 1][y] = "patrolboat";
+				while(patrolboatCount > 0) {
+			    		grid[x][y] = "patrolboat";
+			    		x++;
+			    		patrolboatCount--
+				}
 			}
 			else {
-			    grid[x][y] = "patrolboat";
-			    grid[x - 1][y] = "patrolboat";
+				while(patrolboatCount > 0) {
+					grid[x][y] = "patrolboat";
+					x--; 
+					patrolboatCount--;
+				}
 			}
 		    }
 		    else if (dir == 2) {
 			if (y < 6) {
-			    grid[x][y] = "patrolboat";
-			    grid[x][y + 1] = "patrolboat";
+				while(patrolboatCount > 0) {
+					grid[x][y] = "patrolboat";
+			   		y++;
+			   		patrolboatCount--;
+				}
 			}
 			else {
-			    grid[x][y] = "patrolboat";
-			    grid[x][y - 1] = "patrolboat";
+			    while(patrolboatCount > 0) {
+			    	grid[x][y] = "patrolboat";
+				y--;
+				patroboatCount--;
+			    }
 			}
 		    }
+		}
 		    else {
 			System.out.println("Sorry, but I can only interpret 1 and 2. Please try again.");
 		    }
