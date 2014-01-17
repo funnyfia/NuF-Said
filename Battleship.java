@@ -94,22 +94,14 @@ public class Battleship{
 				carrierCount--;
 			    }
 			}
-<<<<<<< HEAD
+
 		    	else {
 			    while(carrierCount > 0) {
 				grid[x][y] = "carrier";
 				x--;
 				carrierCount--;
 			    }
-=======
-		    }    
-		    else {
-			while(carrierCount > 0) {
-			    grid[x][y] = "carrier";
-			    x--;
-			    carrierCount--;
->>>>>>> 4956bbaf46fb12b8469e10c42f5d63fb5c907f31
-			}
+		    	}
 		    }
 		    else if (dir == 2) {
 			if (y < 6) {
