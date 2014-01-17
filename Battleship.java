@@ -94,12 +94,21 @@ public class Battleship{
 				carrierCount--;
 			    }
 			}
+<<<<<<< HEAD
 		    	else {
 			    while(carrierCount > 0) {
 				grid[x][y] = "carrier";
 				x--;
 				carrierCount--;
 			    }
+=======
+		    }    
+		    else {
+			while(carrierCount > 0) {
+			    grid[x][y] = "carrier";
+			    x--;
+			    carrierCount--;
+>>>>>>> 4956bbaf46fb12b8469e10c42f5d63fb5c907f31
 			}
 		    }
 		    else if (dir == 2) {
@@ -118,12 +127,13 @@ public class Battleship{
 			    }
 			}
 		    }
-		    else {
-			System.out.println("Sorry, but I can only interpret 1 and 2. Please try again.");
-		    }
+		}
+		else {
+		    System.out.println("Sorry, but I can only interpret 1 and 2. Please try again.");
 		}
 	    }
-	}
+	
+    
 	System.out.println("Next, we'll place your battleship. Like before, enter a letter between A and J, and a number between 1 and 10.");
 	while (!CORD_LETTERS.contains(cord.substring(0)) || Integer.parseInt(cord.substring(1)) > 10) {
 	    cord = Keyboard.readString();
