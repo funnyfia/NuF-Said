@@ -144,40 +144,48 @@ public class Battleship{
 		System.out.println("Do you want the ship to lay horizontally, or vertically? Enter 1 for horizontally, or 2 for vertically.");
 		while (dir != 1 || dir != 2) {
 		    dir = Keyboard.readInt();
+		    int battleshipCount = 4;
 		    if (dir == 1) {
 			if (x < 6) {
-			    grid[x][y] = "battleship";
-			    grid[x + 1][y] = "battleship";
-			    grid[x + 2][y] = "battleship";
-			    grid[x + 3][y] = "battleship";
+		  		while(battleshipCount > 5) {
+			    		grid[x][y] = "battleship";
+			    		x++;
+			    		battleshipCount--;
+			    		}
 			}
 			else {
-			    grid[x][y] = "battleship";
-			    grid[x - 1][y] = "battleship";
-			    grid[x - 2][y] = "battleship";
-			    grid[x - 3][y] = "battleship";
+			    while(battleshipCount < 5) {
+			    	grid[x][y] = "battleship";
+			    	x--;
+			    	battleshipCount++;
+			    }
 			}
 		    }
 		    else if (dir == 2) {
 			if (y < 6) {
+			    while(battleshipCount > 5) {
 			    grid[x][y] = "battleship";
-			    grid[x][y + 1] = "battleship";
-			    grid[x][y + 2] = "battleship";
-			    grid[x][y + 3] = "battleship";
+			    y++;
+			    battleshipCount--;
+			    }
 			}
 			else {
-			    grid[x][y] = "battleship";
-			    grid[x][y - 1] = "battleship";
-			    grid[x][y - 2] = "battleship";
-			    grid[x][y - 3] = "battleship";
+				while(battleshipCount > 5) {
+					grid[x][y] = "battleship";
+					y--;
+					battleshipCount--;
+				}
 			}
 		    }
+		}
 		    else {
 			System.out.println("Sorry, but I can only interpret 1 and 2. Please try again.");
 		    }
 		}
-	    }
 	}
+	    }
+	   
+	   
 	System.out.println("Next up is your submarine! Letter between A and J, number between 1 and 10. You know the drill.");
 	while (!CORD_LETTERS.contains(cord.substring(0)) || Integer.parseInt(cord.substring(1)) > 10) {
 	    cord = Keyboard.readString();
