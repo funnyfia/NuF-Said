@@ -86,7 +86,6 @@ public class Battleship{
 		    
 		    int carrierCount = 5;
 		    if (dir == 1) {
-		       
 			if(x < 6) {
 			    while (carrierCount > 0) {
 				grid[x][y] = "carrier";
@@ -94,8 +93,7 @@ public class Battleship{
 				carrierCount--;
 			    }
 			}
-
-		    	else {
+			else {
 			    while(carrierCount > 0) {
 				grid[x][y] = "carrier";
 				x--;
@@ -120,10 +118,12 @@ public class Battleship{
 			}
 		    }
 		}
-		else {
+	    
+		else  {
 		    System.out.println("Sorry, but I can only interpret 1 and 2. Please try again.");
 		}
 	    }
+	}
 	
     
 	System.out.println("Next, we'll place your battleship. Like before, enter a letter between A and J, and a number between 1 and 10.");
@@ -140,10 +140,10 @@ public class Battleship{
 		    if (dir == 1) {
 			if (x < 6) {
 		  		while(battleshipCount > 5) {
-			    		grid[x][y] = "battleship";
-			    		x++;
-			    		battleshipCount--;
-			    		}
+				    grid[x][y] = "battleship";
+				    x++;
+				    battleshipCount--;
+				}
 			}
 			else {
 			    while(battleshipCount < 5) {
@@ -156,28 +156,26 @@ public class Battleship{
 		    else if (dir == 2) {
 			if (y < 6) {
 			    while(battleshipCount > 5) {
-			    grid[x][y] = "battleship";
-			    y++;
-			    battleshipCount--;
+				grid[x][y] = "battleship";
+				y++;
+				battleshipCount--;
 			    }
 			}
 			else {
-				while(battleshipCount > 5) {
-					grid[x][y] = "battleship";
-					y--;
-					battleshipCount--;
-				}
+			    while(battleshipCount > 5) {
+				grid[x][y] = "battleship";
+				y--;
+				battleshipCount--;
+			    }
 			}
 		    }
 		}
-		    else {
+		else {
 			System.out.println("Sorry, but I can only interpret 1 and 2. Please try again.");
-		    }
 		}
-	}
 	    }
-	   
-	   
+	}
+    
 	System.out.println("Next up is your submarine! Letter between A and J, number between 1 and 10. You know the drill.");
 	while (!CORD_LETTERS.contains(cord.substring(0)) || Integer.parseInt(cord.substring(1)) > 10) {
 	    cord = Keyboard.readString();
@@ -190,13 +188,12 @@ public class Battleship{
 		    dir = Keyboard.readInt();
 		    int submarineCount = 3;
 		    if (dir == 1) {
-		    
 			if (x < 6) {
-				while(submarineCount > 0) {
-					grid[x][y] = "submarine";
-					x++;
-					submarineCount--;
-				}
+			    while(submarineCount > 0) {
+				grid[x][y] = "submarine";
+				x++;
+				submarineCount--;
+			    }
 			}
 			else {
 			    while(submarineCount > 0) {
@@ -208,11 +205,11 @@ public class Battleship{
 		    }
 		    else if (dir == 2) {
 			if (y < 6) {
-				while(submarineCount > 0) {
-					grid[x][y] = "submarine";
-			    		y++;
-			    		submarineCount--;
-				}
+			    while(submarineCount > 0) {
+				grid[x][y] = "submarine";
+				y++;
+				submarineCount--;
+			    }
 			}
 			else {
 			    while(submarineCount > 0) {
@@ -223,12 +220,13 @@ public class Battleship{
 			}
 		    }
 		}
-		    else {
+	    
+		else {
 			System.out.println("Sorry, but I can only interpret 1 and 2. Please try again.");
-		    }
 		}
 	    }
 	}
+    
 	System.out.println("DESTROYER TIMEEEEEE. Do I have to tell you what to do again? Enter the coordinate.");
 	while (!CORD_LETTERS.contains(cord.substring(0)) || Integer.parseInt(cord.substring(1)) > 10) {
 	    cord = Keyboard.readString();
@@ -242,43 +240,43 @@ public class Battleship{
 		    int destroyerCount = 3;
 		    if (dir == 1) {
 			if (x < 6) {
-				while(destroyerCount > 0) {
-					grid[x][y] = "destroyer";	
-					x++;
-					destroyerCount--;
-				}
+			    while(destroyerCount > 0) {
+				grid[x][y] = "destroyer";	
+				x++;
+				destroyerCount--;
+			    }
 			}
 			else {
-			 	while(destroyerCount > 0) {
-			    		grid[x][y] = "destroyer";
-			   		x--;
-			   		destroyerCount--;
-			 	}
+			    while(destroyerCount > 0) {
+				grid[x][y] = "destroyer";
+				x--;
+				destroyerCount--;
+			    }
 			}
 		    }
 		    else if (dir == 2) {
 			if (y < 6) {
-				while(destroyerCount > 0) {
-					grid[x][y] = "destroyer";
-			    		y++;
-			    		destroyerCount--;
-				}
+			    while(destroyerCount > 0) {
+				grid[x][y] = "destroyer";
+				y++;
+				destroyerCount--;
+			    }
 			}
 			else {
-				while(destroyerCount > 0) {
-			 		grid[x][y] = "destroyer";
-			    		y--;
-			    		destroyerCount--;
-				}
+			    while(destroyerCount > 0) {
+				grid[x][y] = "destroyer";
+				y--;
+				destroyerCount--;
+			    }
 			}
 		    }
 		}
-		    else {
-			System.out.println("Sorry, but I can only interpret 1 and 2. Please try again.");
-		    }
+		else {
+		    System.out.println("Sorry, but I can only interpret 1 and 2. Please try again.");
 		}
 	    }
 	}
+	
 	System.out.println("Last ship! Enter a coordinate for your patrolboat.");
 	while (!CORD_LETTERS.contains(cord.substring(0)) || Integer.parseInt(cord.substring(1)) > 10) {
 	    cord = Keyboard.readString();
@@ -292,27 +290,27 @@ public class Battleship{
 		    int patrolboatCount = 2;
 		    if (dir == 1) {
 			if (x < 6) {
-				while(patrolboatCount > 0) {
-			    		grid[x][y] = "patrolboat";
-			    		x++;
-			    		patrolboatCount--
-				}
+			    while(patrolboatCount > 0) {
+				grid[x][y] = "patrolboat";
+				x++;
+				patrolboatCount--;
+			    }
 			}
 			else {
-				while(patrolboatCount > 0) {
-					grid[x][y] = "patrolboat";
-					x--; 
-					patrolboatCount--;
-				}
+			    while(patrolboatCount > 0) {
+				grid[x][y] = "patrolboat";
+				x--;
+				patrolboatCount--;
+			    }
 			}
 		    }
 		    else if (dir == 2) {
 			if (y < 6) {
-				while(patrolboatCount > 0) {
-					grid[x][y] = "patrolboat";
-			   		y++;
-			   		patrolboatCount--;
-				}
+			    while(patrolboatCount > 0) {
+				grid[x][y] = "patrolboat";
+				y++;
+				patrolboatCount--;
+			    }
 			}
 			else {
 			    while(patrolboatCount > 0) {
@@ -323,14 +321,14 @@ public class Battleship{
 			}
 		    }
 		}
-		    else {
-			System.out.println("Sorry, but I can only interpret 1 and 2. Please try again.");
-		    }
+		else {
+		    System.out.println("Sorry, but I can only interpret 1 and 2. Please try again.");
 		}
 	    }
 	}
+	
 	System.out.println("Your board is all set up!");
-    }
+    }//end boardsetUp()
 
     public void  playTurn() {
 	int shots = 0;
