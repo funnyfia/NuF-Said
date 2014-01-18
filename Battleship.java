@@ -118,13 +118,12 @@ public class Battleship{
 			}
 		    }
 		}
+	    }
 	    
-		else  {
-		    System.out.println("Sorry, but I can only interpret 1 and 2. Please try again.");
-		}
+	    else  {
+		System.out.println("Sorry, but I can only interpret 1 and 2. Please try again.");
 	    }
 	}
-	
     
 	System.out.println("Next, we'll place your battleship. Like before, enter a letter between A and J, and a number between 1 and 10.");
 	while (!CORD_LETTERS.contains(cord.substring(0)) || Integer.parseInt(cord.substring(1)) > 10) {
@@ -170,12 +169,12 @@ public class Battleship{
 			}
 		    }
 		}
-		else {
-			System.out.println("Sorry, but I can only interpret 1 and 2. Please try again.");
-		}
+	    }
+	    else {
+		System.out.println("Sorry, but I can only interpret 1 and 2. Please try again.");
 	    }
 	}
-    
+	
 	System.out.println("Next up is your submarine! Letter between A and J, number between 1 and 10. You know the drill.");
 	while (!CORD_LETTERS.contains(cord.substring(0)) || Integer.parseInt(cord.substring(1)) > 10) {
 	    cord = Keyboard.readString();
@@ -220,13 +219,13 @@ public class Battleship{
 			}
 		    }
 		}
+	    }
 	    
-		else {
-			System.out.println("Sorry, but I can only interpret 1 and 2. Please try again.");
-		}
+	    else {
+		System.out.println("Sorry, but I can only interpret 1 and 2. Please try again.");
 	    }
 	}
-    
+	
 	System.out.println("DESTROYER TIMEEEEEE. Do I have to tell you what to do again? Enter the coordinate.");
 	while (!CORD_LETTERS.contains(cord.substring(0)) || Integer.parseInt(cord.substring(1)) > 10) {
 	    cord = Keyboard.readString();
@@ -271,9 +270,9 @@ public class Battleship{
 			}
 		    }
 		}
-		else {
-		    System.out.println("Sorry, but I can only interpret 1 and 2. Please try again.");
-		}
+	    }
+	    else {
+		System.out.println("Sorry, but I can only interpret 1 and 2. Please try again.");
 	    }
 	}
 	
@@ -316,17 +315,16 @@ public class Battleship{
 			    while(patrolboatCount > 0) {
 			    	grid[x][y] = "patrolboat";
 				y--;
-				patroboatCount--;
+				patrolboatCount--;
 			    }
 			}
 		    }
 		}
-		else {
-		    System.out.println("Sorry, but I can only interpret 1 and 2. Please try again.");
-		}
+	    }
+	    else {
+		System.out.println("Sorry, but I can only interpret 1 and 2. Please try again.");
 	    }
 	}
-	
 	System.out.println("Your board is all set up!");
     }//end boardsetUp()
 
