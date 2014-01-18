@@ -67,7 +67,7 @@ public class Battleship{
 	}
     }
 
-    public void boardsetUp() {
+    public void boardSetUp() {
 	String[][] grid = new String[10][10];
 	System.out.println("Awesome! First, we'll place your Carrier. It'll take up  units on the board. Make sure you choose a letter between A and J, and a number between 1 and 10 for the coordinates. enter the x and y coordinates with no space in between, like so: 'D7'.");
 	String cord = "";
