@@ -56,7 +56,8 @@ public class Battleship{
         while (setupnum != 1 || setupnum != 2) {
             setupnum = Keyboard.readInt();
             if (setupnum == 1) {
-                setRand();
+		String[][] grid = new String[10][10];
+                setRand(grid);
             }
             else if (setupnum == 2) {
                 boardSetUp();
@@ -547,7 +548,7 @@ public class Battleship{
 
 	public static void main(String args[]) {
 	    Battleship swag = new Battleship();
-        System.out.println(swag);
+	    System.out.println(swag);
         
         //printGrid(grid);
     
