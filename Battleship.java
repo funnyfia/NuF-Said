@@ -343,6 +343,7 @@ public class Battleship{
     }
     
     public void setRand(String[][] grid) {
+	System.out.println("One second, setting up board...");
 	int x = 0;
 	int y = 0;
 	int dir = 0;
@@ -389,6 +390,7 @@ public class Battleship{
 		    }
 		}
 	    }
+	    totalShip--;
 	    dir = (int)(Math.random());//0 is horizontal, 1 is vertical.
 	    x = (int)(Math.random() * 10);
 	    y = (int)(Math.random() * 10);
@@ -424,6 +426,7 @@ public class Battleship{
 		    }
 		}
 	    }
+	    totalShip--;
 	    dir = (int)(Math.random());//0 is horizontal, 1 is vertical.
 	    x = (int)(Math.random() * 10);
 	    y = (int)(Math.random() * 10);
@@ -459,6 +462,7 @@ public class Battleship{
 		    }
 		}
 	    }
+	    totalShip--;
 	    dir = (int)(Math.random());//0 is horizontal, 1 is vertical.
 	    x = (int)(Math.random() * 10);
 	    y = (int)(Math.random() * 10);
@@ -494,6 +498,7 @@ public class Battleship{
 		    }
 		}
 	    }
+	    totalShip--;
 	    dir = (int)(Math.random());//0 is horizontal, 1 is vertical.
 	    x = (int)(Math.random() * 10);
 	    y = (int)(Math.random() * 10);
@@ -529,7 +534,9 @@ public class Battleship{
 		    }
 		}
 	    }
+	    totalShip--;
 	}
+	
 	System.out.println("Your boats are all set up!");
     }
 	public static void printGrid( String[][] a ) {
@@ -548,9 +555,9 @@ public class Battleship{
 
 	public static void main(String args[]) {
 	    Battleship swag = new Battleship();
-	    System.out.println(swag);
-        
-        //printGrid(grid);
+	    
+	    swag.setUp();
+	    
     
     }//end main
 }//end class Battleship
