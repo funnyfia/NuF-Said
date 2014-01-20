@@ -390,18 +390,16 @@ public class Battleship{
 		x = digitify(cord.substring(0, 1));
 		y = Integer.parseInt(cord.substring(1));
 	
-		//determines if x and y coordinates given are within parameters
-		for(int z = 0; z < CORD_LETTERS.length(); z++) {
-		    if(!CORD_LETTERS.substring(z).equals(cord.substring(0))) {
-			System.out.println("error with x axis");
-			break;
-		    }
-		}
-		if (y > 10) 
-		    System.out.println("\n Error with y axis \n");
-		else 
+		boolean contains = CORD_LETTERS.contains(cord.substring(0, 1));
+		
+		if (contains == false)
+		    System.out.print(" \n Error with x axis...please try again: \n");
+		else if (y > 10)
+		    System.out.print(" \n Error with y axis...please try again: \n");
+		else
 		    error = false;
 	    }
+	       
 	    if (aishipctr > 1) {
 		shots++;
 		if (grid[x][y] == "x") {
@@ -698,7 +696,7 @@ public class Battleship{
 		    }
 		}
 	    }
-
+	//need another } to end method but that creates more errors i'm confused with
 
     public int digitify(String x) {
 	int ans = 0;
