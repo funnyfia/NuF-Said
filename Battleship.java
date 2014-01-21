@@ -83,6 +83,7 @@ public class Battleship{
 		System.out.println(" \n Error with x axis...please try again \n");
 	    else if (y > 10) 
 		System.out.println(" \n Error with y axis...please try again \n");
+	    //ADDDED PART HI FIA-------------------------------------------
 	    else if(ugrid[x][y] == "carrier")
 		System.out.print(" \n Dude you already put a ship there...this is why we can't have nice things!..try again: \n");
 	    else 
@@ -97,41 +98,60 @@ public class Battleship{
 	int carrierCount = 5;
 	if (dir == 1) {
 	    if(x < 6) {
+		//ALL OF CARRIER IS MODIFIED FOR THE NEW VERION I'M TRYING TO MAKE --------------------------
 		while (carrierCount > 0) {
-		    ugrid[x][y] = "carrier";
-		    x++;
-		    carrierCount--;
+		    if (ugrid[x+1][y+1] != null) {
+			ugrid[x+1][y+1] = "carrier";
+			x++;
+			carrierCount--;
+		    }
+		    else{
+			System.out.print("Sorry choose a different direction or your ships are gonna collide! ");
+			break;}
 		}
 	    }
 	    else {
 		while(carrierCount > 0) {
-		    ugrid[x][y] = "carrier";
-		    x--;
-		    carrierCount--;
+		    if(ugrid[x-1][y-1] != null) {
+			ugrid[x-1][y-1] = "carrier";
+			x--;
+			carrierCount--;
+		    }
+		    else
+			System.out.print("Sorry choose a different direction or your ships are gonna collide! ");
 		}
 	    }
 	}
 	else if (dir == 2) {
 	    if (y < 6) {
 		while(carrierCount > 0) {
-		    ugrid[x][y] = "carrier";;
-		    y++;;
-		    carrierCount--;
+		    if(ugrid[x+1][y+1] != null) {
+			ugrid[x+1][y+1] = "carrier";;
+			y++;
+			carrierCount--;
+		    }
+		    else
+			System.out.print("Sorry choose a different direction or your ships are gonna collide! ");
 		}
 	    }
+	
 	    else {
 		while(carrierCount > 0) {
-		    ugrid[x][y] = "carrier";
-		    y--;
-		    carrierCount--;
+		    if(ugrid[x-1][y-1] != null) {
+			ugrid[x-1][y-1] = "carrier";
+			y--;
+			carrierCount--;
+		    }
+		    else
+			System.out.print("Sorry choose a different direction or your ships are gonna collide! ");
 		}
 	    }
 	}
-	else
+	else 
             System.out.print("Sorry, but I can only interpret 1 and 2. Please try again: ");
-
+    
 	error = true;
-	//end carrier setup
+    	//end carrier setup
 	//battleship setup
 	while(error) {
 	    System.out.print("Next, we'll place your battleship. Like before, enter a letter between A and J, and a number between 1 and 10: ");
