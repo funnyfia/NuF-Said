@@ -98,28 +98,45 @@ public class Battleship{
 	int carrierCount = 5;
 	if (dir == 1) {
 	    if(x < 6) {
-		while (carrierCount > 0) {
-		    if (ugrid[x+1][y+1] == null) {
-		       ugrid[x+1][y+1] = "carrier";
-			x++;
-			carrierCount--;
-		    }
-		    else
+	    	boolean filled = false;
+	    	while (carrierCount > 0 || filled == false) {
+	    		if(ugrid[x+1][y] != null) 
+	    			filled = true;
+	    		x++;
+	    	}	
+	    	carrierCount = 5;
+	    	if(filled == false) {
+			while (carrierCount > 0) {
+		    		ugrid[x+1][y] = "carrier";
+				x++;
+				carrierCount--;
+			}
+	    	}
+		else 
 			System.out.print("Sorry choose a different direction or your ships are gonna collide! ");
-		}
 	    }
+	
+	    
 	    else {
-		while(carrierCount > 0) {
-		    if(ugrid[x-1][y-1] == null) {
-			ugrid[x-1][y-1] = "carrier";
+		boolean filled = false;
+		while(carrierCount > 0 || filled == false) {
+			if(ugrid[x-1][y] != null)
+				filled = true;
 			x--;
-			carrierCount--;
-		    }
-		    else
-			System.out.print("Sorry choose a different direction or your ships are gonna collide! ");
 		}
-	    }
+		carrierCount = 5;
+		if(filled == false) {
+			while(carrierCount > 0) {
+		    		ugrid[x-1][y] = "carrier";
+				x--;
+				carrierCount--;
+			}
+		}
+		else
+			System.out.print("Sorry choose a different direction or your ships are gonna collide! ");
+	    }	
 	}
+	
 	else if (dir == 2) {
 	    if (y < 6) {
 		while(carrierCount > 0) {
