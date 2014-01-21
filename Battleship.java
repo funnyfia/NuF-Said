@@ -29,7 +29,7 @@ public class Battleship{
     */
     private InputStreamReader isr;
     private BufferedReader in;
-    private String[][] grid = String[10][10];
+    private String[][] ugrid = new String[10][10];
 
     //~~~~~~~~DEFAULT CONSTRUCTOR~~~~~~~~~~~~~~~~~~~~~~
     public Battleship() {
@@ -48,8 +48,8 @@ public class Battleship{
         while (setupnum != 1 || setupnum != 2) {
             setupnum = Keyboard.readInt();
             if (setupnum == 1) {
-		String[][] grid = new String[10][10];
-                setRand(grid);
+		String[][] ugrid = new String[10][10];
+                setRand(ugrid);
             }
             else if (setupnum == 2) {
                 boardSetUp();
@@ -60,10 +60,10 @@ public class Battleship{
         }
     }
 
-    /*board setup here*/
+    
     public void boardSetUp() {
         //creates grid and records coordinates given by user
-	String[][] grid = new String[10][10];
+	String[][] ugrid = new String[10][10];
         boolean error = true;
 	String cord = "";
 	int x = 0;
@@ -83,12 +83,14 @@ public class Battleship{
 		System.out.println(" \n Error with x axis...please try again \n");
 	    else if (y > 10) 
 		System.out.println(" \n Error with y axis...please try again \n");
+	    else if(ugrid[x][y] == "carrier")
+		System.out.print(" \n Dude you already put a ship there...this is why we can't have nice things!..try again: \n");
 	    else 
 		error = false;
 	}
 	
 	
-        grid[x][y] = "carrier";
+        ugrid[x][y] = "carrier";
 	System.out.print("Do you want the ship to lay horizontally, or vertically? Enter 1 for horizontally, or 2 for vertically: ");
 	dir = Keyboard.readInt();
 	    
@@ -96,14 +98,14 @@ public class Battleship{
 	if (dir == 1) {
 	    if(x < 6) {
 		while (carrierCount > 0) {
-		    grid[x][y] = "carrier";
+		    ugrid[x][y] = "carrier";
 		    x++;
 		    carrierCount--;
 		}
 	    }
 	    else {
 		while(carrierCount > 0) {
-		    grid[x][y] = "carrier";
+		    ugrid[x][y] = "carrier";
 		    x--;
 		    carrierCount--;
 		}
@@ -112,14 +114,14 @@ public class Battleship{
 	else if (dir == 2) {
 	    if (y < 6) {
 		while(carrierCount > 0) {
-		    grid[x][y] = "carrier";;
+		    ugrid[x][y] = "carrier";;
 		    y++;;
 		    carrierCount--;
 		}
 	    }
 	    else {
 		while(carrierCount > 0) {
-		    grid[x][y] = "carrier";
+		    ugrid[x][y] = "carrier";
 		    y--;
 		    carrierCount--;
 		}
@@ -144,11 +146,13 @@ public class Battleship{
 		System.out.print("\n error with x axis...please try again: \n");
             else if (y > 10)
                 System.out.print("\n error with y axis...please try again: \n");
+	    else if(ugrid[x][y] == "carrier")
+                System.out.print(" \n Dude you already put a ship there...this is why we can't have nice things!..try again: \n");
             else
                 error = false;
 	}
 
-	grid[x][y] = "battleship";
+	ugrid[x][y] = "battleship";
 	System.out.print("Do you want the ship to lay horizontally, or vertically? Enter 1 for horizontally, or 2 for vertically: ");
 	dir = Keyboard.readInt();
 
@@ -156,14 +160,14 @@ public class Battleship{
 	if (dir == 1) {
 	    if (x < 6) {
 		while(battleshipCount > 0) {
-		    grid[x][y] = "battleship";
+		    ugrid[x][y] = "battleship";
 		    x++;
 		    battleshipCount--;
 		}
 	    }
 	    else {
 		while(battleshipCount > 0) {
-		    grid[x][y] = "battleship";
+		    ugrid[x][y] = "battleship";
 		    x--;
 		    battleshipCount++;
 		}
@@ -172,14 +176,14 @@ public class Battleship{
 	else if (dir == 2) {
 	    if (y < 6) {
 		while(battleshipCount > 0) {
-		    grid[x][y] = "battleship";
+		    ugrid[x][y] = "battleship";
 		    y++;
 		    battleshipCount--;
 		}
 	    }
 	    else {
 		while(battleshipCount > 0) {
-		    grid[x][y] = "battleship";
+		    ugrid[x][y] = "battleship";
 		    y--;
 		    battleshipCount--;
 		}
@@ -204,11 +208,13 @@ public class Battleship{
 		System.out.print("\n Error with x axis...please try again: \n");
 	    else if (y > 10)
 		System.out.print("\n Error with y axis...please try again: \n");
+	    else if(ugrid[x][y] == "carrier")
+                System.out.print(" \n Dude you already put a ship there..this is why we can't have nice things!..try again: \n");
 	    else
 		error = false;
 	}
 	 
-	grid[x][y] = "submarine";
+	ugrid[x][y] = "submarine";
 	System.out.print("Do you want the ship to lay horizontally, or vertically? Enter 1 for horizontally, or 2 for vertically: ");
 	dir = Keyboard.readInt();
 
@@ -216,14 +222,14 @@ public class Battleship{
 	if (dir == 1) {
 	    if (x < 6) {
 		while(submarineCount > 0) {
-		    grid[x][y] = "submarine";
+		    ugrid[x][y] = "submarine";
 		    x++;
 		    submarineCount--;
 		}
 	    }
 	    else {
 		while(submarineCount > 0) {
-		    grid[x][y] = "submarine";
+		    ugrid[x][y] = "submarine";
 		    x--;
 		    submarineCount--;
 		}
@@ -232,14 +238,14 @@ public class Battleship{
 	else if (dir == 2) {
 	    if (y < 6) {
 		while(submarineCount > 0) {
-		    grid[x][y] = "submarine";
+		    ugrid[x][y] = "submarine";
 		    y++;
 		    submarineCount--;
 		}
 	    }
 	    else {
 		while(submarineCount > 0) {
-		    grid[x][y] = "submarine";
+		    ugrid[x][y] = "submarine";
 		    y--;
 		    submarineCount--;
 		}
@@ -264,11 +270,13 @@ public class Battleship{
 		System.out.print("\n Error with x axis...please try again: \n");
 	    else if ( y > 10)
 		System.out.print("\n Error with y axis...please try again: \n");
+	    else if(ugrid[x][y] == "carrier")
+                System.out.print(" \n Dude you already put a ship there..this is why we can't have nice things!..try again: \n");
 	    else
 		error = false;
 	}
         
-        grid[x][y] = "destroyer";
+        ugrid[x][y] = "destroyer";
 	System.out.print("Do you want the ship to lay horizontally, or vertically? Enter 1 for horizontally, or 2 for vertically: ");
 	dir = Keyboard.readInt();
 
@@ -276,14 +284,14 @@ public class Battleship{
 	if (dir == 1) {
 	    if (x < 6) {
 		while(destroyerCount > 0) {
-		    grid[x][y] = "destroyer";        
+		    ugrid[x][y] = "destroyer";        
 		    x++;
 		    destroyerCount--;
 		}
 	    }
 	    else {
 		while(destroyerCount > 0) {
-		    grid[x][y] = "destroyer";
+		    ugrid[x][y] = "destroyer";
 		    x--;
 		    destroyerCount--;
 		}
@@ -292,14 +300,14 @@ public class Battleship{
 	else if (dir == 2) {
 	    if (y < 6) {
 		while(destroyerCount > 0) {
-		    grid[x][y] = "destroyer";
+		    ugrid[x][y] = "destroyer";
 		    y++;
 		    destroyerCount--;
 		}
 	    }
 	    else {
 		while(destroyerCount > 0) {
-		    grid[x][y] = "destroyer";
+		    ugrid[x][y] = "destroyer";
 		    y--;
 		    destroyerCount--;
 		}
@@ -322,11 +330,13 @@ public class Battleship{
 		System.out.print("\n Error with x axiss...please try again: \n");
 	    else if ( y > 10)
 		System.out.print("\n Error with y axis...please try again: \n");
+	    else if(ugrid[x][y] == "carrier")
+                System.out.print(" \n Dude you already put a ship there..this is why we can't have nice things!..try again: \n");
 	    else
 		error = false;
 	}
 
-	grid[x][y] = "patrolboat";
+	ugrid[x][y] = "patrolboat";
 	System.out.print("Do you want the ship to lay horizontally, or vertically? Enter 1 for horizontally, or 2 for vertically: ");
 	dir = Keyboard.readInt();
 
@@ -334,14 +344,14 @@ public class Battleship{
 	if (dir == 1) {
 	    if (x < 6) {
 		while(patrolboatCount > 0) {
-		    grid[x][y] = "patrolboat";
+		    ugrid[x][y] = "patrolboat";
 		    x++;
 		    patrolboatCount--;
 		}
 	    }
 	    else {
 		while(patrolboatCount > 0) {
-		    grid[x][y] = "patrolboat";
+		    ugrid[x][y] = "patrolboat";
 		    x--;
 		    patrolboatCount--;
 		}
@@ -350,14 +360,14 @@ public class Battleship{
 	else if (dir == 2) {
 	    if (y < 6) {
 		while(patrolboatCount > 0) {
-		    grid[x][y] = "patrolboat";
+		    ugrid[x][y] = "patrolboat";
 		    y++;
 		    patrolboatCount--;
 		}
 	    }
 	    else {
 		while(patrolboatCount > 0) {
-		    grid[x][y] = "patrolboat";
+		    ugrid[x][y] = "patrolboat";
 		    y--;
 		    patrolboatCount--;
 		}
@@ -369,7 +379,7 @@ public class Battleship{
     
         System.out.println("\n Your board is all set up!");
     }//end boardsetUp()
-
+    /*
     public void playTurn() {
 	int shots = 0;
 	int aishipctr = 5;
@@ -697,7 +707,7 @@ public class Battleship{
 		}
 	    }
 	//need another } to end method but that creates more errors i'm confused with
-
+*/
     public int digitify(String x) {
 	int ans = 0;
 	for (int i = 0; i < 10; i++) {
@@ -705,7 +715,7 @@ public class Battleship{
 		ans = i + 1;
 	}
 	return ans;
-    }
+	}
     
     public void setRand(String[][] grid) {
 	System.out.println("One second, setting up board...");
