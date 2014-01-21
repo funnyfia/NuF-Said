@@ -98,21 +98,19 @@ public class Battleship{
 	int carrierCount = 5;
 	if (dir == 1) {
 	    if(x < 6) {
-		//ALL OF CARRIER IS MODIFIED FOR THE NEW VERION I'M TRYING TO MAKE --------------------------
 		while (carrierCount > 0) {
-		    if (ugrid[x+1][y+1] != null) {
-			ugrid[x+1][y+1] = "carrier";
+		    if (ugrid[x+1][y+1] == null) {
+		       ugrid[x+1][y+1] = "carrier";
 			x++;
 			carrierCount--;
 		    }
-		    else{
+		    else
 			System.out.print("Sorry choose a different direction or your ships are gonna collide! ");
-			break;}
 		}
 	    }
 	    else {
 		while(carrierCount > 0) {
-		    if(ugrid[x-1][y-1] != null) {
+		    if(ugrid[x-1][y-1] == null) {
 			ugrid[x-1][y-1] = "carrier";
 			x--;
 			carrierCount--;
@@ -125,7 +123,7 @@ public class Battleship{
 	else if (dir == 2) {
 	    if (y < 6) {
 		while(carrierCount > 0) {
-		    if(ugrid[x+1][y+1] != null) {
+		    if(ugrid[x+1][y+1] == null) {
 			ugrid[x+1][y+1] = "carrier";;
 			y++;
 			carrierCount--;
@@ -137,7 +135,7 @@ public class Battleship{
 	
 	    else {
 		while(carrierCount > 0) {
-		    if(ugrid[x-1][y-1] != null) {
+		    if(ugrid[x-1][y-1] == null) {
 			ugrid[x-1][y-1] = "carrier";
 			y--;
 			carrierCount--;
