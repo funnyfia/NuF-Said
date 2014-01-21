@@ -60,16 +60,23 @@ public class Battleship{
         }
     }
 
-    
     public void boardSetUp() {
-        //creates grid and records coordinates given by user
 	String[][] ugrid = new String[10][10];
+	carrierSetup();
+	battleshipSetup();
+	//submarineSetup();
+	//destroyerSetup();
+	//patrolSetup();
+    }
+    public void carrierSetup() {
         boolean error = true;
+	boolean contains = false;
 	String cord = "";
 	int x = 0;
 	int y = 0;
 	int dir = 0;
-	//carrier setup
+	int carrierCount = 5;
+
 	while(error) {
 	    System.out.print("Awesome! First, we'll place your Carrier. It'll take up  units on the board. Make sure you choose a letter between A and J, and a number between 1 and 10 for the coordinates. enter the x and y coordinates with no space in between, like so: 'D7' :  ");
 	    cord = Keyboard.readString();
@@ -77,160 +84,196 @@ public class Battleship{
 	    dir = 0;
 	    y = Integer.parseInt(cord.substring(1));
 		    
-	    boolean contains = CORD_LETTERS.contains(cord.substring(0,1));
+	    contains = CORD_LETTERS.contains(cord.substring(0,1));
 
 	    if (contains == false) 
 		System.out.println(" \n Error with x axis...please try again \n");
 	    else if (y > 10) 
 		System.out.println(" \n Error with y axis...please try again \n");
-	    //ADDDED PART HI FIA-------------------------------------------
-	    else if(ugrid[x][y] == "carrier")
-		System.out.print(" \n Dude you already put a ship there...this is why we can't have nice things!..try again: \n");
 	    else 
 		error = false;
 	}
 	
-	
-        ugrid[x][y] = "carrier";
+	ugrid[x][y] = "carrier";
 	System.out.print("Do you want the ship to lay horizontally, or vertically? Enter 1 for horizontally, or 2 for vertically: ");
 	dir = Keyboard.readInt();
 	    
-	int carrierCount = 5;
 	if (dir == 1) {
 	    if(x < 6) {
-	    	boolean filled = false;
-	    	while (carrierCount > 0 || filled == false) {
-	    		if(ugrid[x+1][y] != null) 
-	    			filled = true;
-	    		x++;
-	    	}	
-	    	carrierCount = 5;
-	    	if(filled == false) {
-			while (carrierCount > 0) {
-		    		ugrid[x+1][y] = "carrier";
-				x++;
-				carrierCount--;
-			}
-	    	}
-		else 
-			System.out.print("Sorry choose a different direction or your ships are gonna collide! ");
+	    	while (carrierCount > 0) {
+		    ugrid[x+1][y] = "carrier";
+		    x++;
+		    carrierCount--;
+		}
 	    }
-	
-	    
+	      
 	    else {
-		boolean filled = false;
-		while(carrierCount > 0 || filled == false) {
-			if(ugrid[x-1][y] != null)
-				filled = true;
-			x--;
+		while(carrierCount > 0) {
+		    ugrid[x-1][y] = "carrier";
+		    x--;
+		    carrierCount--;
 		}
-		carrierCount = 5;
-		if(filled == false) {
-			while(carrierCount > 0) {
-		    		ugrid[x-1][y] = "carrier";
-				x--;
-				carrierCount--;
-			}
-		}
-		else
-			System.out.print("Sorry choose a different direction or your ships are gonna collide! ");
-	    }	
+	    }
 	}
 	
 	else if (dir == 2) {
 	    if (y < 6) {
 		while(carrierCount > 0) {
-		    if(ugrid[x+1][y+1] == null) {
-			ugrid[x+1][y+1] = "carrier";;
+		    ugrid[x][y+1] = "carrier";
 			y++;
 			carrierCount--;
-		    }
-		    else
-			System.out.print("Sorry choose a different direction or your ships are gonna collide! ");
 		}
 	    }
 	
 	    else {
 		while(carrierCount > 0) {
-		    if(ugrid[x-1][y-1] == null) {
-			ugrid[x-1][y-1] = "carrier";
-			y--;
-			carrierCount--;
-		    }
-		    else
-			System.out.print("Sorry choose a different direction or your ships are gonna collide! ");
+		    ugrid[x][y-1] = "carrier";
+		    y--;
+		    carrierCount--;
 		}
 	    }
 	}
+    
 	else 
             System.out.print("Sorry, but I can only interpret 1 and 2. Please try again: ");
     
 	error = true;
-    	//end carrier setup
-	//battleship setup
-	while(error) {
+    }//end carrier setup
+	
+    //battleship setup
+    public void battleshipSetup() {
+	boolean error = true;
+	boolean contains = false;
+	boolean filled = false;
+
+	String cord = "";
+	int x = 0;
+	int y = 0;
+	int dir = 0;
+	int battleshipCount = 4;
+	while (error) {
 	    System.out.print("Next, we'll place your battleship. Like before, enter a letter between A and J, and a number between 1 and 10: ");
 	    cord = Keyboard.readString();
             x = digitify(cord.substring(0, 1));
-	    dir = 0;
 	    y = Integer.parseInt(cord.substring(1));
             
-	    boolean contains = CORD_LETTERS.contains(cord.substring(0,1));
+	    contains = CORD_LETTERS.contains(cord.substring(0,1));
 
 	    if (contains == false)
-		System.out.print("\n error with x axis...please try again: \n");
+		System.out.print("\n Error with x axis...please try again: \n");
             else if (y > 10)
-                System.out.print("\n error with y axis...please try again: \n");
-	    else if(ugrid[x][y] == "carrier")
+                System.out.print("\n Error with y axis...please try again: \n");
+	    else if(ugrid[x][y] != null)
                 System.out.print(" \n Dude you already put a ship there...this is why we can't have nice things!..try again: \n");
             else
                 error = false;
 	}
-
 	ugrid[x][y] = "battleship";
-	System.out.print("Do you want the ship to lay horizontally, or vertically? Enter 1 for horizontally, or 2 for vertically: ");
-	dir = Keyboard.readInt();
-
-	int battleshipCount = 4;
-	if (dir == 1) {
-	    if (x < 6) {
-		while(battleshipCount > 0) {
-		    ugrid[x][y] = "battleship";
-		    x++;
-		    battleshipCount--;
-		}
-	    }
-	    else {
-		while(battleshipCount > 0) {
-		    ugrid[x][y] = "battleship";
-		    x--;
-		    battleshipCount++;
-		}
-	    }
-	}
-	else if (dir == 2) {
-	    if (y < 6) {
-		while(battleshipCount > 0) {
-		    ugrid[x][y] = "battleship";
-		    y++;
-		    battleshipCount--;
-		}
-	    }
-	    else {
-		while(battleshipCount > 0) {
-		    ugrid[x][y] = "battleship";
-		    y--;
-		    battleshipCount--;
-		}
-	    }
-	}
-	else 
-	    System.out.print("Sorry, but I can only interpret 1 and 2. Please try again: ");
-	
 	error = true;
-	//end battleship set up
-	//start of submarine set up
 	while(error) {
+	    System.out.print("Do you want the ship to lay horizontally, or vertically? Enter 1 for horizontally, or 2 for vertically: ");
+	    dir = Keyboard.readInt();
+	    //-------------------------------------------------------
+	    if (dir == 1) {
+		if (x < 6) {
+		    int temp = x;
+		    while (battleshipCount > 0 || filled == false) {
+			if(ugrid[temp + 1][y] != null) 
+			    filled = true;
+			temp++;
+			battleshipCount--;
+			 }
+
+		    battleshipCount = 4;
+		    if(filled == false) {
+			while(battleshipCount > 0) {
+			    ugrid[x+1][y] = "battleship";
+			    x++;
+			    battleshipCount--;
+			    error = false; //exits while loop
+			}
+		    }
+		    else
+			System.out.print("The direction you have chosen will result in an error try again: ");
+		}	
+		//--------------------------------------------------
+		else {
+		    int temp = x;
+		    while(battleshipCount > 0 || filled == false) {
+			if(ugrid[temp-1][y] != null)
+			    filled = true;
+			temp--;
+			battleshipCount--;
+		    }
+		    
+		    battleshipCount = 4;
+		    if(filled == false) {
+			while(battleshipCount > 0) {
+			    ugrid[x-1][y] = "battleship";
+			    x--;
+			    battleshipCount--;
+			    error = false; //exits while loop 
+			}
+		    }
+		    else
+			System.out.print("The direction you have chosen will result in an error try again: ");
+		}
+	    }
+	    //-------------------------------------------------------
+	    else if (dir == 2) {
+                if (y < 6) {
+                    int temp = y;
+                    while (battleshipCount > 0 || filled == false) {
+                        if(ugrid[x][temp + 1] != null)
+                            filled = true;
+                        temp++;
+                        battleshipCount--;
+                            }
+
+                    battleshipCount = 4;
+                    if(filled == false) {
+                        while(battleshipCount > 0) {
+                            ugrid[x][y+1] = "battleship";
+                            y++;
+                            battleshipCount--;
+			    error = false; //exits while loop 
+                        }
+                    }
+                    else
+                        System.out.print("The direction you have chosen will result in an error try again: ");
+                }
+		//-------------------------------------------------------
+		else {
+                    int temp = y;
+                    while(battleshipCount > 0 || filled == false) {
+                        if(ugrid[x][temp - 1] != null)
+                            filled = true;
+                        temp--;
+                        battleshipCount--;
+                    }
+
+                    battleshipCount = 4;
+                    if(filled == false) {
+                        while(battleshipCount > 0) {
+                            ugrid[x][y-1] = "battleship";
+                            y--;
+                            battleshipCount--;
+			    error = false; //exits while loop 
+                        }
+                    }
+                    else
+                        System.out.print("The direction you have chosen will result in an error try again: ");
+                }
+            }
+	}//end while
+	    
+    }//end battleshipSetup  
+     
+	
+
+	//start of submarine set up
+	/*
+	  while(error) {
 	    System.out.print("Next up is your submarine! Letter between A and J, number between 1 and 10. You know the drill: ");
             cord = Keyboard.readString();
 	    x = digitify(cord.substring(0, 1));
@@ -414,6 +457,8 @@ public class Battleship{
     
         System.out.println("\n Your board is all set up!");
     }//end boardsetUp()
+	*/
+
     /*
     public void playTurn() {
 	int shots = 0;
