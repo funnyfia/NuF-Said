@@ -825,14 +825,7 @@ public class Battleship{
 	}
     }
 
-    public int digitify(String x) {
-        int ans = 0;
-        for (int i = 0; i < 10; i++) {
-            if (x.substring(0) == CORD_LETTERS.substring(i))
-                ans = i + 1;
-        }
-        return ans;
-    }
+
     
     public void setRand(String[][] grid) {
         System.out.println("One second, setting up board...");
@@ -1045,6 +1038,14 @@ public class Battleship{
         System.out.println(s);
     }
 
+   public int digitify(String x) {
+        int ans = 0;
+        for (int i = 0; i < 10; i++) {
+            if (x.substring(0, 1) == CORD_LETTERS.substring(i, i+1))
+                ans = i + 1;
+        }
+        return ans;
+    }
     public static void main(String args[]) {
         Battleship swag = new Battleship();
             
