@@ -1,0 +1,44 @@
+DEVLOG SONNNNNN
+
+Obstacles Overcome (and how)
+------------------------------------------
+The biggest obstacle we overcome was that at
+first, our project was entirely nonfunctional. We
+overcame it by looking at our errors and fixing
+them. Another minor obstacle was github, 
+which was fantastically uncooperative. When we
+tried to pull our file, it would give us the file from
+a few versions ago, not the most recent. We 
+overcame that by copying and pasting our code
+from github into our .java files. 
+
+Unresolved Issues
+------------------------
+It would be super nice if our project worked.
+...Still working on that.
+
+Cool Stuff Learned (conceptual and/or practical)
+--------------------------------------------------------------
+We're pretty sure the coolest thing we learned 
+was how to make a Battleship game. Fun for all
+ages! That was really cool. It was also pretty
+swagtastic how many eureka moments we had,
+in terms of coding efficiently. Crazy amounts of
+wow.
+
+Mid-development Design Changes (and why)
+----------------------------------------------------------
+We had several major refurbishments of our
+code. First, we started with no code. Then, we
+changed the design by adding code. We had a 
+really slow and long way of setting up ships. We
+changed it to a bunch of loops, which was still
+really long, but infinitely less so. The biggest 
+design change was that when we started, we 
+planned to have 6 classes. As it turns out, we
+just have one now. That was pretty big design 
+change.
+
+Lessons Learned (to apply to future projects, CS or otherwise)
+--------------------------------------------------------------------------------
+If you think you've brainstormed all the possible errors you will meet…you're wrong.
