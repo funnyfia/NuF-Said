@@ -1,5 +1,7 @@
 DEVLOG SONNNNNN
 
+Please pity us, Mr. Brown. We've been working forever. We initially said that 80 hours was a good estimate for the project. Pah! It's been tens of hours longer than that.
+
 Entries:
 2014-01-08: Created flowcharts and brainstormed
 
@@ -23,8 +25,8 @@ Entries:
 Obstacles Overcome (and how)
 
 2014-01-23/24: Have been trying to fix errors in boardsetup after carrier since 
-we both got home. It has been like 8 hours basically. Everything seems like it should work but it still gives us errors. We have started from scratch to attempt to kill are darlings but none of our ideas seem to
-be working.
+we both got home. It has been like 8 hours basically. Everything seems like it should work but it still gives us errors. We have started from scratch to attempt to kill our darlings but none of our ideas seem to
+be working. WE'RE SO TIRED. This is super frustrating, because we put all the work in, and we have all the code written, and we're being held back from actually playing the game because of one thing that we can't figure out.
 ------------------------------------------
 The biggest obstacle we overcome was that at
 first, our project was entirely nonfunctional. We
