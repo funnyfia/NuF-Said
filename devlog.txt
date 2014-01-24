@@ -23,7 +23,7 @@ Entries:
 Obstacles Overcome (and how)
 
 2014-01-23/24: Have been trying to fix errors in boardsetup after carrier since 
-we both got home. Everything seems like it should work but it still gives us errors. We have started from scratch to attempt to kill are darlings but none of our ideas seem to
+we both got home. It has been like 8 hours basically. Everything seems like it should work but it still gives us errors. We have started from scratch to attempt to kill are darlings but none of our ideas seem to
 be working.
 ------------------------------------------
 The biggest obstacle we overcome was that at
