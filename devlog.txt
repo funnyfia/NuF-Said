@@ -21,6 +21,10 @@ Entries:
 
 2014-01-23: Attempting to make it work
 Obstacles Overcome (and how)
+
+2014-01-23/24: Have been trying to fix errors in boardsetup after carrier since 
+we both got home. Everything seems like it should work but it still gives us errors. We have started from scratch to attempt to kill are darlings but none of our ideas seem to
+be working.
 ------------------------------------------
 The biggest obstacle we overcome was that at
 first, our project was entirely nonfunctional. We
@@ -35,7 +39,8 @@ from github into our .java files.
 Unresolved Issues
 ------------------------
 It would be super nice if our project worked.
-...Still working on that. 
+...Still working on that. For some reason our setup function doesn't recognize properly
+when there is another ship.
 
 Cool Stuff Learned (conceptual and/or practical)
 --------------------------------------------------------------
